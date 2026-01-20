@@ -1,0 +1,29 @@
+# Example Caddyfile for Tracker2API
+# Add this to your existing Caddy configuration
+
+api.clingy.me {
+    # API endpoints
+    handle /api/* {
+        reverse_proxy tracker2api:6063
+    }
+
+    # Health check
+    handle /health {
+        reverse_proxy tracker2api:6063
+    }
+
+    # Serve uploaded files
+    handle /files/* {
+        root * /srv/docker/mvchat/uploads/tracker2
+        uri strip_prefix /files
+        file_server
+    }
+
+    # Enable compression
+    encode gzip
+
+    # Logging
+    log {
+        output file /var/log/caddy/tracker2api.log
+    }
+}

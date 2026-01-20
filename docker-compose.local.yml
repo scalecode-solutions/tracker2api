@@ -1,0 +1,27 @@
+services:
+  tracker2api:
+    build: .
+    container_name: tracker2api-local
+    restart: unless-stopped
+    ports:
+      - "6063:6063"
+    environment:
+      - PORT=6063
+      - DATABASE_URL=postgresql://mvchat2:mvchat2_dev@mvchat2-db:5432/mvchat2?sslmode=disable
+      - AUTH_TOKEN_KEY=pyn/SxK8gwZEzVyMKNY1tp0jp2NTaSXiJq5FGOIJp5U=
+      - AUTH_SERIAL_NUM=1
+      - UPLOAD_PATH=/app/uploads/tracker2
+      - LOG_LEVEL=info
+      - CORS_ORIGINS=*
+    volumes:
+      - mvchat2_mvchat2-uploads:/app/uploads
+    networks:
+      - mvchat2_default
+
+volumes:
+  mvchat2_mvchat2-uploads:
+    external: true
+
+networks:
+  mvchat2_default:
+    external: true

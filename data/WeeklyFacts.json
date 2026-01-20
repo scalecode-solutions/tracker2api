@@ -1,0 +1,470 @@
+[
+  {
+    "id": 4,
+    "week": 4,
+    "babyDevelopment": "The embryo has implanted in your uterus. The neural tube, which becomes the brain and spinal cord, is forming. The placenta is beginning to develop to nourish your baby.",
+    "motherChanges": "You may not know you're pregnant yet. Some women experience light spotting (implantation bleeding) or mild cramping. Your period should be due around now.",
+    "tips": [
+      "Start taking prenatal vitamins with folic acid if you haven't already",
+      "Avoid alcohol, smoking, and limit caffeine",
+      "Schedule your first prenatal appointment"
+    ],
+    "milestones": ["Implantation complete", "Neural tube forming", "Placenta developing"]
+  },
+  {
+    "id": 5,
+    "week": 5,
+    "babyDevelopment": "The heart begins to beat! It's tiny but pumping at about 100-160 beats per minute. The circulatory system is the first major system to function. Brain divides into 5 areas.",
+    "motherChanges": "Pregnancy hormone hCG is rising rapidly. You may start experiencing morning sickness, breast tenderness, fatigue, and frequent urination. A missed period confirms pregnancy.",
+    "tips": [
+      "Eat small, frequent meals to combat nausea",
+      "Stay well hydrated",
+      "Get plenty of rest when you can"
+    ],
+    "milestones": ["First heartbeat!", "Brain begins developing", "Arm and leg buds appear"]
+  },
+  {
+    "id": 6,
+    "week": 6,
+    "babyDevelopment": "Facial features are forming including dark spots for eyes and small openings for ears. The neural tube closes. Arm and leg buds are more defined. Heart has 4 chambers.",
+    "motherChanges": "Morning sickness may intensify. You might notice mood swings, food aversions, and heightened sense of smell. Hormonal changes can cause skin changes.",
+    "tips": [
+      "Identify and avoid your nausea triggers",
+      "Consider ginger tea or candies for morning sickness",
+      "Wear comfortable, supportive bras"
+    ],
+    "milestones": ["Facial features forming", "Neural tube closes", "Heart has 4 chambers"]
+  },
+  {
+    "id": 7,
+    "week": 7,
+    "babyDevelopment": "The brain is growing rapidly—it grows about a third of its size! Arm buds look like paddles. Leg buds are forming. The beginnings of eyes' retinas are developing.",
+    "motherChanges": "Fatigue and nausea may peak. You might experience increased saliva, bloating, and constipation. Emotions may fluctuate due to hormonal changes.",
+    "tips": [
+      "Take short naps when needed",
+      "Eat protein-rich snacks to help with energy",
+      "Start thinking about prenatal testing options"
+    ],
+    "milestones": ["Brain growing rapidly", "Arms and legs developing", "Retinas forming"]
+  },
+  {
+    "id": 8,
+    "week": 8,
+    "babyDevelopment": "All essential organs have begun to form. Baby makes tiny movements, though you can't feel them. Fingers are webbed but forming. Nose, lips, and eyelids becoming visible.",
+    "motherChanges": "Your uterus is expanding to the size of a grapefruit. Frequent urination is common. Heartburn and indigestion may begin. Clothes may feel tighter.",
+    "tips": [
+      "Avoid lying flat after meals to reduce heartburn",
+      "Consider a body pillow for sleeping comfort",
+      "Schedule your first ultrasound"
+    ],
+    "milestones": ["All essential organs forming", "First tiny movements", "Fingers and toes developing"]
+  },
+  {
+    "id": 9,
+    "week": 9,
+    "babyDevelopment": "Baby is now officially called a fetus! Eyes are fully formed but closed. Earlobes visible. Muscles developing, allowing small movements. All organs, muscles, and nerves functioning.",
+    "motherChanges": "Your waistline may be thickening slightly. Mood swings and fatigue continue. Some women notice skin changes like darkening around nipples.",
+    "tips": [
+      "Invest in comfortable, loose-fitting clothes",
+      "Stay active with gentle exercise like walking",
+      "Consider joining a pregnancy support group"
+    ],
+    "milestones": ["Embryo is now called a fetus", "Eyes fully formed", "Muscles developing"]
+  },
+  {
+    "id": 10,
+    "week": 10,
+    "babyDevelopment": "All vital organs are formed and starting to function together. Fingernails and toenails developing. Baby can bend limbs at elbows and knees. Heartbeat detectable on Doppler.",
+    "motherChanges": "Visible veins may appear on breasts and abdomen due to increased blood volume. Round ligament pain may begin. Growing uterus may cause slight abdominal cramping.",
+    "tips": [
+      "Wear supportive, comfortable shoes",
+      "Continue moderate exercise if approved by your doctor",
+      "Discuss genetic testing options with your provider"
+    ],
+    "milestones": ["Vital organs functioning", "Fingernails developing", "Heartbeat on Doppler"]
+  },
+  {
+    "id": 11,
+    "week": 11,
+    "babyDevelopment": "Tooth buds appearing under gums. Baby can open and close hands, hiccup, and swallow amniotic fluid. External genitalia beginning to form. Head is about half the body size.",
+    "motherChanges": "Morning sickness may start to ease for some. Hair and nails might grow faster. You may feel more energetic. Skin changes like linea nigra may appear.",
+    "tips": [
+      "Eat calcium-rich foods for baby's developing bones",
+      "Start researching childcare and birthing options",
+      "Consider prenatal yoga classes"
+    ],
+    "milestones": ["Tooth buds forming", "Can swallow amniotic fluid", "External genitalia developing"]
+  },
+  {
+    "id": 12,
+    "week": 12,
+    "babyDevelopment": "Reflexes developing—baby can curl toes and open/close fingers. Intestines in the abdomen now. Face has human profile. Fingernails formed. Kidneys making urine.",
+    "motherChanges": "Risk of miscarriage drops significantly. Hormone levels stabilizing. You may feel more energetic. Belly might start showing, especially if not your first pregnancy.",
+    "tips": [
+      "Many people share their news now",
+      "Start looking at maternity clothes",
+      "Schedule nuchal translucency screening if desired"
+    ],
+    "milestones": ["End of first trimester", "Reflexes developing", "Risk of miscarriage drops"]
+  },
+  {
+    "id": 13,
+    "week": 13,
+    "babyDevelopment": "Fingerprints are forming! Vocal cords developing. Baby can put thumb in mouth. Bones beginning to harden. Intestines making contractions to practice digestion.",
+    "motherChanges": "End of first trimester. Energy typically increases. Morning sickness usually fading. Round ligament pain may increase as uterus grows.",
+    "tips": [
+      "Celebrate reaching the second trimester!",
+      "Plan a babymoon if desired",
+      "Review your diet and exercise routine with your provider"
+    ],
+    "milestones": ["First trimester complete", "Fingerprints forming", "Vocal cords developing"]
+  },
+  {
+    "id": 14,
+    "week": 14,
+    "babyDevelopment": "Baby can squint, frown, and grimace. Kidneys producing urine released into amniotic fluid. Lanugo (fine downy hair) covers body. Neck is defined and lower limbs developed.",
+    "motherChanges": "Welcome to the second trimester! Many women feel their best now. Round ligament pain common. Appetite may increase. Nasal congestion may begin.",
+    "tips": [
+      "Enjoy the 'honeymoon phase' of pregnancy",
+      "Start sleeping on your side if comfortable",
+      "Begin planning the nursery"
+    ],
+    "milestones": ["Second trimester begins", "Facial expressions possible", "Lanugo forming"]
+  },
+  {
+    "id": 15,
+    "week": 15,
+    "babyDevelopment": "Bones hardening, especially long bones. Baby can sense light through closed eyelids. Scalp hair pattern established. Ears moving to final position on head.",
+    "motherChanges": "Nasal congestion common due to increased blood flow. You might notice the pregnancy glow. Increased appetite. Round ligament stretching.",
+    "tips": [
+      "Use a humidifier for nasal congestion",
+      "Start Kegel exercises to strengthen pelvic floor",
+      "Consider maternity photography planning"
+    ],
+    "milestones": ["Bones hardening", "Can sense light", "Hearing developing"]
+  },
+  {
+    "id": 16,
+    "week": 16,
+    "babyDevelopment": "Facial muscles working—baby makes expressions. Nervous system connecting throughout body. Eyes moving slowly beneath closed lids. You might feel first movements (quickening).",
+    "motherChanges": "Baby bump becoming more visible. Backaches may begin as center of gravity shifts. Some women feel first movements. Skin may feel itchy as it stretches.",
+    "tips": [
+      "Practice good posture to reduce back pain",
+      "Stay active but don't overexert yourself",
+      "Schedule your anatomy scan (usually 18-20 weeks)"
+    ],
+    "milestones": ["May feel first movements", "Facial expressions developing", "Nervous system connecting"]
+  },
+  {
+    "id": 17,
+    "week": 17,
+    "babyDevelopment": "Skeleton changing from soft cartilage to bone. Fat stores beginning to form under skin. Sweat glands developing. Baby is more active with stronger movements.",
+    "motherChanges": "Increased appetite is normal. Vivid dreams are common. Center of gravity continues shifting. You may feel off-balance at times.",
+    "tips": [
+      "Eat iron-rich foods to support increased blood volume",
+      "Keep a dream journal if you find it interesting",
+      "Consider a pregnancy pillow for better sleep"
+    ],
+    "milestones": ["Skeleton hardening", "Fat stores beginning", "More active movements"]
+  },
+  {
+    "id": 18,
+    "week": 18,
+    "babyDevelopment": "Ears in final position on head. Baby may respond to loud sounds. Myelin coating nerves for faster signal transmission. Digestive system working.",
+    "motherChanges": "Dizziness from blood pressure changes is common. Leg cramps may occur, especially at night. Increased vaginal discharge is normal.",
+    "tips": [
+      "Stand up slowly to avoid dizziness",
+      "Stretch calves before bed to prevent cramps",
+      "Stay well hydrated throughout the day"
+    ],
+    "milestones": ["Ears in final position", "Responds to sounds", "Digestive system working"]
+  },
+  {
+    "id": 19,
+    "week": 19,
+    "babyDevelopment": "Vernix caseosa (protective cheese-like coating) forms on skin. Sensory development is rapid. Baby has regular sleep/wake cycles. Arms and legs in proportion.",
+    "motherChanges": "Hip pain may begin as ligaments loosen with relaxin hormone. Skin changes like linea nigra may darken. You may feel stronger movements.",
+    "tips": [
+      "Try prenatal massage for hip and back pain",
+      "Use pregnancy-safe skincare products",
+      "Prepare questions for your anatomy scan"
+    ],
+    "milestones": ["Vernix forming", "Sleep cycles established", "Proportional limbs"]
+  },
+  {
+    "id": 20,
+    "week": 20,
+    "babyDevelopment": "Halfway point! Baby can hear your voice and heartbeat. Meconium (first stool) forming in intestines. Hair may be growing on head. Anatomy scan can reveal sex.",
+    "motherChanges": "Fundal height about equal to weeks pregnant. Belly button may pop out or flatten. Stronger, more distinct movements felt. Appetite may increase.",
+    "tips": [
+      "Talk and sing to baby—they can hear you!",
+      "Take halfway celebration photos",
+      "Start researching birth plan options"
+    ],
+    "milestones": ["Halfway point!", "Can hear your voice", "Anatomy scan typically done"]
+  },
+  {
+    "id": 21,
+    "week": 21,
+    "babyDevelopment": "Taste buds developing—baby can taste what you eat via amniotic fluid. Eyebrows and eyelids fully formed. Very active with lots of movement. Responds to touch.",
+    "motherChanges": "Increased appetite continues. Spider veins or varicose veins may appear. Skin stretching may cause itching. You may feel baby respond to your touch.",
+    "tips": [
+      "Elevate legs when resting to reduce swelling",
+      "Wear compression stockings if needed",
+      "Enjoy feeling baby move and respond to you"
+    ],
+    "milestones": ["Taste buds developing", "Eyebrows formed", "Very active period"]
+  },
+  {
+    "id": 22,
+    "week": 22,
+    "babyDevelopment": "Grip strength increasing. Lips becoming more distinct. Eyes formed but iris lacks pigment. Fingernails fully formed. Baby may grasp the umbilical cord.",
+    "motherChanges": "Braxton Hicks contractions may begin—irregular, painless tightening. Stretch marks might appear on belly, breasts, or thighs. Hemorrhoids possible.",
+    "tips": [
+      "Learn to identify Braxton Hicks vs. real contractions",
+      "Moisturize skin to help with stretching",
+      "Start counting kicks to learn baby's patterns"
+    ],
+    "milestones": ["Strong grip", "Braxton Hicks may start", "Fingernails formed"]
+  },
+  {
+    "id": 23,
+    "week": 23,
+    "babyDevelopment": "Lungs developing surfactant essential for breathing after birth. REM sleep beginning—baby may dream! Hearing more refined. Recognizes your voice.",
+    "motherChanges": "Swelling in feet and ankles common, especially late in day. Balance may be affected. Back pain may increase. Feeling more emotional.",
+    "tips": [
+      "Elevate feet when sitting to reduce swelling",
+      "Avoid standing for long periods",
+      "Play music for baby to hear"
+    ],
+    "milestones": ["Lungs developing surfactant", "REM sleep begins", "Recognizes your voice"]
+  },
+  {
+    "id": 24,
+    "week": 24,
+    "babyDevelopment": "Viability milestone—baby could potentially survive with intensive NICU care if born now. Inner ear fully developed for balance. Fingerprints and footprints complete.",
+    "motherChanges": "Glucose screening test (for gestational diabetes) typically done now. Linea nigra may darken. Skin may be dry or itchy. You may feel out of breath at times.",
+    "tips": [
+      "Complete your glucose screening test",
+      "Start researching pediatricians",
+      "Consider childbirth education classes"
+    ],
+    "milestones": ["Viability milestone", "Inner ear developed", "Glucose screening"]
+  },
+  {
+    "id": 25,
+    "week": 25,
+    "babyDevelopment": "Baby responds to familiar voices with movement. Nostrils open and begin practicing breathing amniotic fluid. Spine straightening. Growing more hair.",
+    "motherChanges": "Heartburn and indigestion common as uterus pushes stomach. Hemorrhoids may develop. Trouble finding comfortable sleeping positions. Frequent urination returns.",
+    "tips": [
+      "Eat smaller, more frequent meals",
+      "Increase fiber intake to prevent constipation",
+      "Sleep propped up if heartburn bothers you"
+    ],
+    "milestones": ["Responds to voices", "Nostrils open", "Practicing breathing"]
+  },
+  {
+    "id": 26,
+    "week": 26,
+    "babyDevelopment": "Eyes begin to open for the first time. Brain waves for hearing and sight are measurable. Lungs practicing breathing motions. Baby can distinguish light from dark.",
+    "motherChanges": "Trouble sleeping is very common now. Braxton Hicks may become more noticeable. Lower back pain may intensify. You may feel pressure in pelvis.",
+    "tips": [
+      "Establish a relaxing bedtime routine",
+      "Try relaxation techniques like deep breathing",
+      "Start packing your hospital bag soon"
+    ],
+    "milestones": ["Eyes begin to open", "Brain waves measurable", "Can see light/dark"]
+  },
+  {
+    "id": 27,
+    "week": 27,
+    "babyDevelopment": "Brain tissue and neurons developing rapidly. Baby follows regular sleep/wake cycles you may notice. Hiccups common as baby practices breathing. May respond to your voice.",
+    "motherChanges": "Leg cramps and restless legs may increase. Shortness of breath as uterus expands upward. You might feel baby hiccup—rhythmic movements.",
+    "tips": [
+      "Stretch before bed to prevent leg cramps",
+      "Ask your doctor about magnesium supplements",
+      "Enjoy feeling baby's hiccups"
+    ],
+    "milestones": ["Rapid brain development", "Regular sleep/wake cycles", "Hiccups common"]
+  },
+  {
+    "id": 28,
+    "week": 28,
+    "babyDevelopment": "Third trimester begins! Eyes can detect light and blink. Brain continues rapid development. Can dream during REM sleep. Weighs about 2.2 pounds.",
+    "motherChanges": "Rh-negative mothers receive Rhogam shot. Shortness of breath as uterus expands. More frequent prenatal visits begin (every 2 weeks). Fatigue may return.",
+    "tips": [
+      "Prenatal visits now every 2 weeks",
+      "Practice breathing exercises for labor",
+      "Finalize nursery preparations"
+    ],
+    "milestones": ["Third trimester!", "Eyes detect light", "Rhogam if needed"]
+  },
+  {
+    "id": 29,
+    "week": 29,
+    "babyDevelopment": "Muscles and lungs maturing rapidly. Baby is more active with distinct rest and activity periods. Brain controlling body temperature. More fat forming under skin.",
+    "motherChanges": "Fatigue returns as body works harder. Frequent urination increases. Braxton Hicks more regular. May experience shortness of breath and heartburn.",
+    "tips": [
+      "Rest when you feel tired",
+      "Continue monitoring kick counts",
+      "Review and finalize your birth preferences"
+    ],
+    "milestones": ["Muscles maturing", "Temperature regulation", "Distinct activity patterns"]
+  },
+  {
+    "id": 30,
+    "week": 30,
+    "babyDevelopment": "Brain surface becoming wrinkled (gyri and sulci forming) for more brain cells. Vision improving. Baby can follow a light source. May be head-down by now.",
+    "motherChanges": "Mood swings may return. Difficulty finding comfortable positions. Baby may 'drop' lower in pelvis. Heartburn and indigestion common.",
+    "tips": [
+      "Use multiple pillows for support when sleeping",
+      "Talk about your feelings with your partner",
+      "Tour the birthing center or hospital"
+    ],
+    "milestones": ["Brain wrinkles forming", "Vision improving", "May turn head-down"]
+  },
+  {
+    "id": 31,
+    "week": 31,
+    "babyDevelopment": "All five senses are working together. Rapid brain development continues. Baby may turn head-down in preparation for birth. Can track light with eyes.",
+    "motherChanges": "Leaky breasts (colostrum) may begin. Trouble catching breath as uterus presses diaphragm. Waddling walk develops as pelvis loosens. Frequent urination.",
+    "tips": [
+      "Use nursing pads if breasts are leaking",
+      "Continue gentle exercise like walking or swimming",
+      "Finalize your birth plan details"
+    ],
+    "milestones": ["All senses working", "Colostrum may appear", "Preparing for birth"]
+  },
+  {
+    "id": 32,
+    "week": 32,
+    "babyDevelopment": "Toenails visible. Skin becoming less transparent and more opaque. Baby gaining weight rapidly—about half a pound per week. Lanugo (body hair) disappearing.",
+    "motherChanges": "Heartburn may worsen. Back pain common. Nesting instinct may kick in—urge to clean and organize. Braxton Hicks becoming more frequent.",
+    "tips": [
+      "Avoid heavy meals before bed",
+      "Practice good posture throughout the day",
+      "Channel nesting energy productively"
+    ],
+    "milestones": ["Rapid weight gain (~½ lb/week)", "Lanugo disappearing", "Nesting instinct"]
+  },
+  {
+    "id": 33,
+    "week": 33,
+    "babyDevelopment": "Bones hardening throughout body (except skull, which stays soft for delivery). Immune system developing. Baby can coordinate sucking and swallowing together.",
+    "motherChanges": "Difficulty sleeping due to size and discomfort. Increased Braxton Hicks. May feel baby pressing on ribs. Shortness of breath common.",
+    "tips": [
+      "Try sleeping in a semi-reclined position",
+      "Stretch gently to relieve discomfort",
+      "Install car seat and have it inspected"
+    ],
+    "milestones": ["Bones hardening", "Immune system developing", "Can suck and swallow"]
+  },
+  {
+    "id": 34,
+    "week": 34,
+    "babyDevelopment": "Central nervous system maturing. Lungs are almost fully developed. Vernix (protective coating) thickening. Baby's fingernails reach fingertips.",
+    "motherChanges": "Fatigue intensifies. Vision changes possible (blurry vision). May experience carpal tunnel symptoms—numbness or tingling in hands. Swelling increases.",
+    "tips": [
+      "Rest often—your body is working hard",
+      "Wear wrist splints if hands are numb",
+      "Prepare freezer meals for after baby arrives"
+    ],
+    "milestones": ["Nervous system maturing", "Lungs almost ready", "Nails at fingertips"]
+  },
+  {
+    "id": 35,
+    "week": 35,
+    "babyDevelopment": "Kidneys fully developed and functioning. Liver can process waste. Baby is running out of room—movements change to rolls and stretches instead of kicks.",
+    "motherChanges": "Frequent urination increases as baby presses on bladder. Braxton Hicks more intense. Difficulty walking due to pelvic pressure. Insomnia common.",
+    "tips": [
+      "Stay close to restrooms when out",
+      "Walk when comfortable to maintain mobility",
+      "Review hospital bag checklist"
+    ],
+    "milestones": ["Kidneys developed", "Liver functioning", "Less room for movement"]
+  },
+  {
+    "id": 36,
+    "week": 36,
+    "babyDevelopment": "Baby may drop into pelvis (lightening). Fat continues accumulating for temperature regulation. Average weight about 6 pounds now. Most babies are head-down.",
+    "motherChanges": "Breathing may be easier if baby drops. Increased pelvic pressure. Nesting urge very strong. Weekly prenatal visits begin. May lose mucus plug.",
+    "tips": [
+      "Weekly prenatal visits start now",
+      "Keep your phone charged at all times",
+      "Rest as much as possible"
+    ],
+    "milestones": ["Baby may drop", "Weekly visits begin", "About 6 pounds"]
+  },
+  {
+    "id": 37,
+    "week": 37,
+    "babyDevelopment": "Early term! Baby is practicing breathing movements. Head likely engaged in pelvis. Considered fully developed if born now. Gaining about an ounce per day.",
+    "motherChanges": "Mucus plug may release (bloody show). Increased vaginal discharge. False labor (prodromal labor) common. Cervix may begin softening and dilating.",
+    "tips": [
+      "Know the signs of true labor vs. false labor",
+      "Stay calm if you lose your mucus plug—can still be weeks",
+      "Continue gentle movement like walking"
+    ],
+    "milestones": ["Early term", "Fully developed", "May lose mucus plug"]
+  },
+  {
+    "id": 38,
+    "week": 38,
+    "babyDevelopment": "All organs are fully mature and functioning. Baby is gaining about 1 ounce per day. Meconium (first stool) present in intestines. Ready for life outside.",
+    "motherChanges": "Cervix may begin dilating. Intense Braxton Hicks. Trouble sleeping due to discomfort and anticipation. Nesting instinct in full force.",
+    "tips": [
+      "Rest as much as possible",
+      "Watch for bloody show (mucus with blood)",
+      "Pack any last-minute items for hospital"
+    ],
+    "milestones": ["Organs fully mature", "Cervix may dilate", "Gaining 1 oz/day"]
+  },
+  {
+    "id": 39,
+    "week": 39,
+    "babyDevelopment": "Full term! Chest is prominent. Baby is fully ready for birth. Average weight 7-8 pounds, 19-21 inches long. Lungs producing surfactant for breathing.",
+    "motherChanges": "May feel burst of energy (nesting). Intense pelvic pressure. Possible diarrhea or loose stools before labor begins. Cervix ripening.",
+    "tips": [
+      "Don't overdo it even with extra energy",
+      "Stay close to your hospital or birth center",
+      "Trust your body—you've got this"
+    ],
+    "milestones": ["Full term!", "Ready for birth", "Average 7-8 lbs"]
+  },
+  {
+    "id": 40,
+    "week": 40,
+    "babyDevelopment": "Due date! Average newborn is 19-21 inches and 7-8 pounds. Skull bones still soft and flexible to pass through birth canal. Baby is fully ready.",
+    "motherChanges": "Waiting can be emotionally challenging. Cervical checks may be done. Baby could arrive any day. Some women experience prelabor symptoms.",
+    "tips": [
+      "Be patient—only 5% of babies arrive on due date",
+      "Try natural comfort measures (walking, warm baths)",
+      "Enjoy these final days of pregnancy"
+    ],
+    "milestones": ["Due date!", "Baby could arrive any day", "Fully ready"]
+  },
+  {
+    "id": 41,
+    "week": 41,
+    "babyDevelopment": "Late term. Baby continues growing but may lose some vernix coating. Monitoring becomes more important to ensure baby is thriving. Placenta aging.",
+    "motherChanges": "More frequent monitoring (non-stress tests, ultrasounds). Induction may be discussed. Emotionally and physically exhausting. Increased pressure.",
+    "tips": [
+      "Stay in close contact with your healthcare provider",
+      "Discuss induction options and timing",
+      "Try to stay relaxed while waiting"
+    ],
+    "milestones": ["Late term", "Increased monitoring", "Induction may be discussed"]
+  },
+  {
+    "id": 42,
+    "week": 42,
+    "babyDevelopment": "Post-term. Baby's skin may be dry and peeling from reduced vernix. Placenta efficiency decreasing. Close monitoring essential for baby's wellbeing.",
+    "motherChanges": "Induction usually scheduled by now. Continuous monitoring likely. Ready and anxious to meet your baby. May feel very uncomfortable.",
+    "tips": [
+      "Follow your healthcare provider's guidance",
+      "Trust the medical team",
+      "You will meet your baby very soon!"
+    ],
+    "milestones": ["Post-term", "Induction typically scheduled", "Close monitoring"]
+  }
+]
