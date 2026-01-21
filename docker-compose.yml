@@ -7,7 +7,7 @@ services:
       - "6062:6062"
     environment:
       - PORT=6062
-      - DATABASE_URL=postgresql://mvchat2@mvchat2-db:5432/mvchat2?sslmode=disable
+      - DATABASE_URL=postgresql://mvchat2:mvchat2_dev@mvchat2-db:5432/mvchat2?sslmode=disable
       - AUTH_TOKEN_KEY=pyn/SxK8gwZEzVyMKNY1tp0jp2NTaSXiJq5FGOIJp5U=
       - UPLOAD_PATH=/app/uploads/tracker2
       - DATA_PATH=/app/data

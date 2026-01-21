@@ -38,7 +38,7 @@ COPY --from=builder /app/data ./data
 RUN mkdir -p /app/uploads/tracker2
 
 # Expose port
-EXPOSE 6063
+EXPOSE 6062
 
 # Run the binary
 CMD ["./tracker2api"]
