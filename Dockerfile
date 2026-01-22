@@ -25,11 +25,8 @@ RUN apk --no-cache add ca-certificates tzdata
 
 WORKDIR /app
 
-# Copy the binary from builder
+# Copy the binary from builder (migrations are embedded via go:embed)
 COPY --from=builder /app/tracker2api .
-
-# Copy migrations (for reference)
-COPY --from=builder /app/migrations ./migrations
 
 # Copy data files
 COPY --from=builder /app/data ./data
