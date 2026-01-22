@@ -2,6 +2,15 @@
 -- Run this migration on the mvchat database
 -- This is the consolidated schema including all migrations
 
+-- Schema version tracking for auto-migrations
+CREATE TABLE IF NOT EXISTS clingy_schema_version (
+    version INT PRIMARY KEY,
+    applied_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Insert current version (matches this file's version number)
+INSERT INTO clingy_schema_version (version) VALUES (1) ON CONFLICT DO NOTHING;
+
 -- Pregnancies table
 CREATE TABLE IF NOT EXISTS clingy_pregnancies (
     id BIGSERIAL PRIMARY KEY,

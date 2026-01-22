@@ -44,6 +44,23 @@ func main() {
 	}
 	defer database.Close()
 
+	// Run database migrations
+	currentVersion, err := database.GetSchemaVersion()
+	if err != nil {
+		log.Printf("Warning: Could not get schema version: %v", err)
+	} else {
+		log.Printf("Current schema version: %d", currentVersion)
+	}
+
+	applied, err := database.RunMigrations()
+	if err != nil {
+		log.Fatalf("Failed to run migrations: %v", err)
+	}
+	if applied > 0 {
+		newVersion, _ := database.GetSchemaVersion()
+		log.Printf("Applied %d migration(s), new schema version: %d", applied, newVersion)
+	}
+
 	// Initialize authenticator (validates mvchat2 JWT tokens)
 	authenticator := auth.New(authKeyBytes)
 

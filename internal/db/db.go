@@ -4,15 +4,24 @@ package db
 import (
 	"context"
 	"database/sql"
+	"embed"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
+	"path/filepath"
+	"sort"
+	"strconv"
+	"strings"
 	"time"
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/scalecode-solutions/tracker2api/internal/models"
 )
+
+//go:embed migrations/*.sql
+var migrationsFS embed.FS
 
 var (
 	ErrNotFound = errors.New("not found")
@@ -42,6 +51,132 @@ func New(databaseURL string) (*DB, error) {
 // Close closes the database connection.
 func (d *DB) Close() error {
 	return d.db.Close()
+}
+
+// ============ Migration Operations ============
+
+// migration represents a single database migration.
+type migration struct {
+	version  int
+	filename string
+}
+
+// GetSchemaVersion returns the current schema version, or 0 if no schema exists.
+func (d *DB) GetSchemaVersion() (int, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	// Check if schema_version table exists
+	var exists bool
+	err := d.db.GetContext(ctx, &exists, `
+		SELECT EXISTS (
+			SELECT FROM information_schema.tables
+			WHERE table_name = 'clingy_schema_version'
+		)
+	`)
+	if err != nil {
+		return 0, fmt.Errorf("failed to check schema: %w", err)
+	}
+
+	if !exists {
+		return 0, nil // No schema yet
+	}
+
+	var version int
+	err = d.db.GetContext(ctx, &version, `SELECT version FROM clingy_schema_version ORDER BY version DESC LIMIT 1`)
+	if err == sql.ErrNoRows {
+		return 0, nil
+	}
+	if err != nil {
+		return 0, err
+	}
+	return version, nil
+}
+
+// RunMigrations applies any pending database migrations.
+// Returns the number of migrations applied.
+func (d *DB) RunMigrations() (int, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+	defer cancel()
+
+	// Get current schema version
+	currentVersion, err := d.GetSchemaVersion()
+	if err != nil {
+		return 0, fmt.Errorf("failed to get schema version: %w", err)
+	}
+
+	// Read migration files
+	entries, err := migrationsFS.ReadDir("migrations")
+	if err != nil {
+		return 0, fmt.Errorf("failed to read migrations directory: %w", err)
+	}
+
+	// Parse and sort migrations
+	var migrations []migration
+	for _, entry := range entries {
+		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".sql") {
+			continue
+		}
+
+		// Extract version from filename (e.g., "001_initial.sql" -> 1)
+		name := entry.Name()
+		parts := strings.SplitN(name, "_", 2)
+		if len(parts) < 2 {
+			continue
+		}
+
+		version, err := strconv.Atoi(parts[0])
+		if err != nil {
+			log.Printf("Skipping migration with invalid version: %s", name)
+			continue
+		}
+
+		migrations = append(migrations, migration{
+			version:  version,
+			filename: name,
+		})
+	}
+
+	// Sort by version
+	sort.Slice(migrations, func(i, j int) bool {
+		return migrations[i].version < migrations[j].version
+	})
+
+	// Apply pending migrations
+	applied := 0
+	for _, m := range migrations {
+		if m.version <= currentVersion {
+			continue // Already applied
+		}
+
+		log.Printf("Applying migration %d: %s", m.version, m.filename)
+
+		// Read migration SQL
+		sqlBytes, err := migrationsFS.ReadFile(filepath.Join("migrations", m.filename))
+		if err != nil {
+			return applied, fmt.Errorf("failed to read migration %s: %w", m.filename, err)
+		}
+
+		// Execute migration
+		_, err = d.db.ExecContext(ctx, string(sqlBytes))
+		if err != nil {
+			return applied, fmt.Errorf("failed to execute migration %s: %w", m.filename, err)
+		}
+
+		// Update schema version
+		_, err = d.db.ExecContext(ctx, `
+			INSERT INTO clingy_schema_version (version) VALUES ($1)
+			ON CONFLICT (version) DO NOTHING
+		`, m.version)
+		if err != nil {
+			return applied, fmt.Errorf("failed to update schema version: %w", err)
+		}
+
+		applied++
+		log.Printf("Migration %d applied successfully", m.version)
+	}
+
+	return applied, nil
 }
 
 // User operations
