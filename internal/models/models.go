@@ -26,6 +26,8 @@ type Pregnancy struct {
 	ParentRole        sql.NullString  `db:"parent_role" json:"parentRole,omitempty"`
 	ProfilePhoto       sql.NullString  `db:"profile_photo" json:"profilePhoto,omitempty"`
 	DisplayPartnerCard sql.NullBool    `db:"display_partner_card" json:"displayPartnerCard,omitempty"`
+	CoownerID          sql.NullString  `db:"coowner_id" json:"coownerId,omitempty"`
+	CoownerName        sql.NullString  `db:"coowner_name" json:"coownerName,omitempty"`
 	Outcome            sql.NullString  `db:"outcome" json:"outcome,omitempty"`
 	OutcomeDate       sql.NullTime    `db:"outcome_date" json:"outcomeDate,omitempty"`
 	Archived          bool            `db:"archived" json:"archived"`
@@ -271,6 +273,7 @@ type Supporter struct {
 	PregnancyID        int64          `db:"pregnancy_id" json:"-"`
 	UserID             string         `db:"user_id" json:"userId"`
 	DisplayName        sql.NullString `db:"display_name" json:"displayName,omitempty"`
+	Permission         sql.NullString `db:"permission" json:"permission,omitempty"`
 	JoinedAt           time.Time      `db:"joined_at" json:"joinedAt"`
 	InvitedViaCodeID   sql.NullInt64  `db:"invited_via_code_id" json:"-"`
 	RemovedAt          sql.NullTime   `db:"removed_at" json:"removedAt,omitempty"`

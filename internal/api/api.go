@@ -1358,6 +1358,22 @@ func (h *Handler) GetMyRole(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Try as coowner (admin with owner-level access)
+	pregnancy, err = h.db.GetPregnancyByCoowner(ctx, user.UserID)
+	if err == nil {
+		resp := models.MyRoleResponse{
+			Role:       "coowner",
+			Permission: "write",
+			Pregnancy:  toPregnancyDTO(pregnancy),
+		}
+		writeJSON(w, http.StatusOK, resp)
+		return
+	}
+	if err != nil && err != db.ErrNotFound {
+		writeError(w, http.StatusInternalServerError, "INTERNAL_ERROR", err.Error())
+		return
+	}
+
 	// Try as partner
 	pregnancy, err = h.db.GetPregnancyByPartner(ctx, user.UserID)
 	if err == nil {
@@ -1381,9 +1397,15 @@ func (h *Handler) GetMyRole(w http.ResponseWriter, r *http.Request) {
 	// Try as supporter
 	pregnancy, err = h.db.GetPregnancyBySupporter(ctx, user.UserID)
 	if err == nil {
+		// Get supporter record to check permission
+		supporter, sErr := h.db.GetSupporterByUserID(ctx, user.UserID)
+		permission := "read"
+		if sErr == nil && supporter.Permission.Valid {
+			permission = supporter.Permission.String
+		}
 		resp := models.MyRoleResponse{
 			Role:       "support",
-			Permission: "read",
+			Permission: permission,
 			Pregnancy:  toPregnancyDTO(pregnancy),
 		}
 		writeJSON(w, http.StatusOK, resp)
@@ -1594,17 +1616,41 @@ func (h *Handler) getAccessiblePregnancy(ctx context.Context, userID string) (*m
 		return nil, "", err
 	}
 
-	// Try as partner
-	pregnancy, err = h.db.GetPregnancyByPartner(ctx, userID)
-	if err != nil {
+	// Try as coowner (admin with owner-level access)
+	pregnancy, err = h.db.GetPregnancyByCoowner(ctx, userID)
+	if err == nil {
+		return pregnancy, "write", nil
+	}
+	if err != db.ErrNotFound {
 		return nil, "", err
 	}
 
-	permission := "read"
-	if pregnancy.PartnerPermission.Valid {
-		permission = pregnancy.PartnerPermission.String
+	// Try as partner
+	pregnancy, err = h.db.GetPregnancyByPartner(ctx, userID)
+	if err == nil {
+		permission := "read"
+		if pregnancy.PartnerPermission.Valid {
+			permission = pregnancy.PartnerPermission.String
+		}
+		return pregnancy, permission, nil
 	}
-	return pregnancy, permission, nil
+	if err != db.ErrNotFound {
+		return nil, "", err
+	}
+
+	// Try as supporter
+	pregnancy, err = h.db.GetPregnancyBySupporter(ctx, userID)
+	if err == nil {
+		// Get supporter record to check permission
+		supporter, sErr := h.db.GetSupporterByUserID(ctx, userID)
+		permission := "read"
+		if sErr == nil && supporter.Permission.Valid {
+			permission = supporter.Permission.String
+		}
+		return pregnancy, permission, nil
+	}
+
+	return nil, "", err
 }
 
 func toPregnancyDTO(p *models.Pregnancy) *models.PregnancyDTO {

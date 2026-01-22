@@ -98,6 +98,22 @@ func (d *DB) GetPregnancyByPartner(ctx context.Context, partnerID string) (*mode
 	return &p, nil
 }
 
+// GetPregnancyByCoowner gets pregnancy where user is the coowner.
+func (d *DB) GetPregnancyByCoowner(ctx context.Context, coownerID string) (*models.Pregnancy, error) {
+	var p models.Pregnancy
+	err := d.db.GetContext(ctx, &p, `
+		SELECT * FROM clingy_pregnancies
+		WHERE coowner_id = $1
+	`, coownerID)
+	if err == sql.ErrNoRows {
+		return nil, ErrNotFound
+	}
+	if err != nil {
+		return nil, err
+	}
+	return &p, nil
+}
+
 // GetPregnancyByID gets pregnancy by ID.
 func (d *DB) GetPregnancyByID(ctx context.Context, id int64) (*models.Pregnancy, error) {
 	var p models.Pregnancy
@@ -636,34 +652,45 @@ func (d *DB) RedeemInviteCode(ctx context.Context, codeID int64, userID string, 
 	}
 
 	// Handle based on role
-	if code.Role == "father" {
-		// Update pregnancy with partner info
-		// Admin email doesn't show in partner card UI
+	if isAdmin {
+		// Admin becomes coowner - gets owner-level access without occupying partner slot
+		_, err = tx.ExecContext(ctx, `
+			UPDATE clingy_pregnancies SET
+				coowner_id = $1,
+				coowner_name = $2,
+				updated_at = NOW()
+			WHERE id = $3
+		`, userID, displayName, code.PregnancyID)
+		if err != nil {
+			return nil, "", err
+		}
+	} else if code.Role == "father" {
+		// Normal partner - store as partner
 		_, err = tx.ExecContext(ctx, `
 			UPDATE clingy_pregnancies SET
 				partner_id = $1,
 				partner_status = 'approved',
 				partner_permission = $2,
 				partner_name = $3,
-				display_partner_card = $5,
+				display_partner_card = true,
 				updated_at = NOW()
 			WHERE id = $4
-		`, userID, permission, displayName, code.PregnancyID, !isAdmin)
+		`, userID, permission, displayName, code.PregnancyID)
 		if err != nil {
 			return nil, "", err
 		}
 	} else {
-		// Create supporter record
-		// Admin email doesn't show in partner card UI
+		// Normal supporter
 		_, err = tx.ExecContext(ctx, `
-			INSERT INTO clingy_supporters (pregnancy_id, user_id, display_name, invited_via_code_id, display_partner_card)
-			VALUES ($1, $2, $3, $4, $5)
+			INSERT INTO clingy_supporters (pregnancy_id, user_id, display_name, invited_via_code_id, display_partner_card, permission)
+			VALUES ($1, $2, $3, $4, true, $5)
 			ON CONFLICT (pregnancy_id, user_id) DO UPDATE SET
 				display_name = EXCLUDED.display_name,
 				removed_at = NULL,
 				joined_at = NOW(),
-				display_partner_card = EXCLUDED.display_partner_card
-		`, code.PregnancyID, userID, displayName, codeID, !isAdmin)
+				display_partner_card = true,
+				permission = EXCLUDED.permission
+		`, code.PregnancyID, userID, displayName, codeID, permission)
 		if err != nil {
 			return nil, "", err
 		}
@@ -746,6 +773,22 @@ func (d *DB) GetPregnancyBySupporter(ctx context.Context, userID string) (*model
 		return nil, err
 	}
 	return &p, nil
+}
+
+// GetSupporterByUserID gets a supporter by user ID.
+func (d *DB) GetSupporterByUserID(ctx context.Context, userID string) (*models.Supporter, error) {
+	var s models.Supporter
+	err := d.db.GetContext(ctx, &s, `
+		SELECT * FROM clingy_supporters
+		WHERE user_id = $1 AND removed_at IS NULL
+	`, userID)
+	if err == sql.ErrNoRows {
+		return nil, ErrNotFound
+	}
+	if err != nil {
+		return nil, err
+	}
+	return &s, nil
 }
 
 // RemoveSupporter removes a supporter (soft delete).
